@@ -18,9 +18,17 @@ class Team {
 
         if ($homeGoals > $opposingGoals) {
             $this->totalPoints += 3;
-        } elseif ($homeGoals == $opposingGoals) {
+        } 
+        elseif ($homeGoals == $opposingGoals) {
             $this->totalPoints += 1;
         }
     }
+    public function getGoalAverage() {
+        if ($this->totalGames == 0) {
+            return 0;
+        }
+        return $this->totalGoals / $this->totalGames;
+    }
 }
+
 ?>
